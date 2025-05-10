@@ -419,10 +419,6 @@ Serve pra **espionar** métodos em objetos já existentes (sem precisar mockar
 tudo). Ideal pra _parcial mocks_, tipo `console.log`, `Date.now`, ou uma função
 dentro de um serviço que não quer mockar inteiro.
 
-Perfeito, cara. Essa estrutura tá ótima e super clara pra aula. Fiz só pequenos
-ajustes de linguagem, padronização e deixei tudo mais afiado e direto, mantendo
-tua essência:
-
 ---
 
 ## Regras da testing library para seguir boas práticas
