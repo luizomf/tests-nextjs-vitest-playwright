@@ -253,6 +253,22 @@ export async function teardown() {
 }
 ```
 
+Arquivo `tsconfig.json`:
+
+```json
+{
+  // outras configs
+  "compilerOptions": {
+    // outras configs
+    "types": ["vitest/globals"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+  // outras configs
+}
+```
+
 Arquivo `package.json`:
 
 ```json
