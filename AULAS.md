@@ -14,8 +14,8 @@
       (Parte 2)
 - [x] Como mockar retorno de função com `vi.spyOn` no Vitest (Parte 1)
 - [x] Como mockar retorno de função com `vi.spyOn` no Vitest (Parte 2)
-- [ ] Configurando scripts do `package.json` para testes com Vitest e Playwright
-- [ ] Detalhar o que fiz para arquivos `.env.*` e `.gitignore` e os motivos
+- [x] Configurando scripts do `package.json` para testes com Vitest e Playwright
+- [x] Detalhar o que fiz para arquivos `.env.*` e `.gitignore` e os motivos
 - [ ] Configurando as variáveis de ambiente para Vitest, Playwright e Next.js
 - [ ] Criando o schema (tabela SQL) com Drizzle + migrations
 - [ ] Configurando o Drizzle ORM com base no ambiente (`.env.*`)
