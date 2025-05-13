@@ -17,8 +17,8 @@
 - [x] Configurando scripts do `package.json` para testes com Vitest e Playwright
 - [x] Detalhar o que fiz para arquivos `.env.*` e `.gitignore` e os motivos
 - [x] Configurando as variáveis de ambiente para Vitest, Playwright e Next.js
-- [ ] Criando o schema (tabela SQL) com Drizzle + migrations
-- [ ] Configurando o Drizzle ORM com base no ambiente (`.env.*`)
+- [x] Criando o schema (tabela SQL) com Drizzle + migrations
+- [x] Configure o Drizzle ORM com base .env para Vitest, Playwright e Next.js
 - [ ] Interface, implementação e testes do repositório com banco de dados real
 - [ ] Usecase `createTodoUseCase` com testes de integração no Vitest
 - [ ] Usecase `deleteTodoUseCase` com testes de integração no Vitest
