@@ -32,9 +32,7 @@
       "indexes": {
         "todo_description_unique": {
           "name": "todo_description_unique",
-          "columns": [
-            "description"
-          ],
+          "columns": ["description"],
           "isUnique": true
         }
       },

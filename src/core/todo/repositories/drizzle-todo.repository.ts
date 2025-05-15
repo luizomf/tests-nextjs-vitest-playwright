@@ -1,8 +1,8 @@
-import { DrizzleDatabase } from "@/db";
-import { Todo, TodoPresenter } from "../schemas/todo.contract";
-import { TodoRepository } from "./todo.contract.repository";
-import { todoTable } from "../schemas/drizzle-todo-table.schema";
-import { eq } from "drizzle-orm";
+import { DrizzleDatabase } from '@/db';
+import { Todo, TodoPresenter } from '../schemas/todo.contract';
+import { TodoRepository } from './todo.contract.repository';
+import { todoTable } from '../schemas/drizzle-todo-table.schema';
+import { eq } from 'drizzle-orm';
 
 export class DrizzleTodoRepository implements TodoRepository {
   private readonly db: DrizzleDatabase;
@@ -32,7 +32,7 @@ export class DrizzleTodoRepository implements TodoRepository {
     if (!!existingTodo) {
       return {
         success: false,
-        errors: ["Já existe um todo com o ID ou descrição enviados"],
+        errors: ['Já existe um todo com o ID ou descrição enviados'],
       };
     }
 
@@ -49,7 +49,7 @@ export class DrizzleTodoRepository implements TodoRepository {
     if (!existingTodo) {
       return {
         success: false,
-        errors: ["Todo não existe"],
+        errors: ['Todo não existe'],
       };
     }
 
