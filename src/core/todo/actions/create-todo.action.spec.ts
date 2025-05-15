@@ -1,6 +1,4 @@
-import * as createTodoUseCaseMod from '@/core/todo/usecases/create-todo.usecase';
-import { InvalidTodo, ValidTodo } from '../schemas/todo.contract';
-import { revalidatePath } from 'next/cache';
+import { makeTestTodoMocks } from '@/core/__tests__/utils/make-test-todo-mocks';
 import { createTodoAction } from './create-todo.action';
 
 vi.mock('next/cache', () => {
@@ -11,7 +9,7 @@ vi.mock('next/cache', () => {
 
 describe('createTodoAction (unit)', () => {
   test('deve chamar o createTodoUseCase com os valores corretos', async () => {
-    const { createTodoUseCaseSpy } = makeMocks();
+    const { createTodoUseCaseSpy } = makeTestTodoMocks();
     const expectedParamCall = 'Usecase should be called with this';
     await createTodoAction(expectedParamCall);
 
@@ -21,7 +19,7 @@ describe('createTodoAction (unit)', () => {
   });
 
   test('deve chamar o revalidatePath se o usecase retornar sucesso', async () => {
-    const { revalidatePathMocked } = makeMocks();
+    const { revalidatePathMocked } = makeTestTodoMocks();
     const description = 'Usecase should be called with this';
     await createTodoAction(description);
 
@@ -29,7 +27,7 @@ describe('createTodoAction (unit)', () => {
   });
 
   test('deve retornar o mesmo valor do usecase em caso de sucesso', async () => {
-    const { successResult } = makeMocks();
+    const { successResult } = makeTestTodoMocks();
     const description = 'Usecase should be called with this';
     const result = await createTodoAction(description);
 
@@ -37,7 +35,7 @@ describe('createTodoAction (unit)', () => {
   });
 
   test('deve retornar o mesmo valor do usecase em caso de erro', async () => {
-    const { createTodoUseCaseSpy, errorResult } = makeMocks();
+    const { createTodoUseCaseSpy, errorResult } = makeTestTodoMocks();
     const description = 'Usecase should be called with this';
 
     createTodoUseCaseSpy.mockResolvedValue(errorResult);
@@ -47,31 +45,3 @@ describe('createTodoAction (unit)', () => {
     expect(result).toStrictEqual(errorResult);
   });
 });
-
-const makeMocks = () => {
-  const successResult = {
-    success: true,
-    todo: {
-      id: 'id',
-      description: 'description',
-      createdAt: 'createdAt',
-    },
-  } as ValidTodo;
-
-  const errorResult = {
-    success: false,
-    errors: ['any', 'error'],
-  } as InvalidTodo;
-
-  const createTodoUseCaseSpy = vi
-    .spyOn(createTodoUseCaseMod, 'createTodoUseCase')
-    .mockResolvedValue(successResult);
-  const revalidatePathMocked = vi.mocked(revalidatePath);
-
-  return {
-    successResult,
-    errorResult,
-    createTodoUseCaseSpy,
-    revalidatePathMocked,
-  };
-};

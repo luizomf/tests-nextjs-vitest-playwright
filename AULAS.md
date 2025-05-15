@@ -24,5 +24,5 @@
 - [x] Usecase `createTodoUseCase` com testes de integração no Vitest
 - [x] Server action do Next.js com testes do Vitest para `create`
 - [x] Usecase `deleteTodoUseCase` com testes de integração no Vitest
-- [ ] Server action do Next.js com testes do Vitest para `delete`
+- [x] Server action do Next.js com testes do Vitest para `delete`
 - [ ] (EDITAR) Veremos os próximos passos de acordo com as aulas...
