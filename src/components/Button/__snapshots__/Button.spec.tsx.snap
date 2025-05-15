@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Button /> > props padrão e JSX > deve renderizar o botão com props padrão (apenas com children) 1`] = `
+<button
+  class="bg-blue-600 hover:bg-blue-700 text-blue-100 text-base/tight py-2 px-4 rounded-md [&_svg]:w-4 [&_svg]:h-4 gap-2 flex items-center justify-center cursor-pointer transition disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed"
+>
+  Enviar formulário
+</button>
+`;
