@@ -1,6 +1,7 @@
 # env files (can opt-in for committing if needed)
 .env*
 !.env.example
+dev-code/*
 
 # Database primarily used for tests and development
 *.sqlite3
