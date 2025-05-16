@@ -25,4 +25,11 @@
 - [x] Server action do Next.js com testes do Vitest para `create`
 - [x] Usecase `deleteTodoUseCase` com testes de integração no Vitest
 - [x] Server action do Next.js com testes do Vitest para `delete`
-- [ ] (EDITAR) Veremos os próximos passos de acordo com as aulas...
+- [x] Configurar Storybook
+- [x] Criar componente `<Button />`, adicionar no Storybook e testar
+- [x] Criar componente `<InputText />`, adicionar no Storybook e testar
+- [ ] Criar componente `<TodoForm />`, adicionar no Storybook e testar
+- [ ] Criar componente `<TodoList />`, adicionar no Storybook e testar
+- [ ] Criar componente `<TodoContainer />`, adicionar no Storybook e testar
+- [ ] Adicionar `<TodoContainer />` ao `page.tsx`, subir o Next.js e verificar
+- [ ] Começar os testes e2e (end-to-end)
