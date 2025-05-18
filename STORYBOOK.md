@@ -25,7 +25,7 @@ componentes isolados** em um ambiente controlado.
 Instale os pacotes com:
 
 ```bash
-npm install -D @storybook/react@8.x @storybook/nextjs@8.x @storybook/addon-essentials@8.x storybook@8.x
+npm install -D @storybook/react@8.x @storybook/nextjs@8.x @storybook/addon-essentials@8.x storybook@8.x @storybook/test@8.x --upgrade
 ```
 
 ---
