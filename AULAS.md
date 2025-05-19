@@ -28,7 +28,7 @@
 - [x] Configurar Storybook
 - [x] Criar componente `<Button />`, adicionar no Storybook e testar
 - [x] Criar componente `<InputText />`, adicionar no Storybook e testar
-- [ ] Criar componente `<TodoForm />`, adicionar no Storybook e testar
+- [x] Criar componente `<TodoForm />`, adicionar no Storybook e testar
 - [ ] Criar componente `<TodoList />`, adicionar no Storybook e testar
 - [ ] Criar componente `<TodoContainer />`, adicionar no Storybook e testar
 - [ ] Adicionar `<TodoContainer />` ao `page.tsx`, subir o Next.js e verificar
