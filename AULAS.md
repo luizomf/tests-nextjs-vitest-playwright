@@ -30,6 +30,6 @@
 - [x] Criar componente `<InputText />`, adicionar no Storybook e testar
 - [x] Criar componente `<TodoForm />`, adicionar no Storybook e testar
 - [x] Criar componente `<TodoList />`, adicionar no Storybook e testar
-- [ ] Criar componente `<TodoContainer />`, adicionar no Storybook e testar
-- [ ] Adicionar `<TodoContainer />` ao `page.tsx`, subir o Next.js e verificar
+- [x] Criar componente `<TodoContainer />`, adicionar no Storybook e testar
+- [x] Adicionar `<TodoContainer />` ao `page.tsx`, subir o Next.js e verificar
 - [ ] Começar os testes e2e (end-to-end)
