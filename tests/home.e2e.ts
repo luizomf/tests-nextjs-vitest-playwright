@@ -77,7 +77,9 @@ test.describe('<Home /> (E2E)', () => {
         .filter({ hasText: textTrimmed });
       const createdTodoText = await createdTodo.textContent();
 
-      await expect(createdTodoText).toBe(textTrimmed);
+      // Removi o await porque o ts reclamou (até comentei isso na aula):
+      // 'await' has no effect on the type of this expression. (ts 80007)
+      expect(createdTodoText).toBe(textTrimmed);
     });
 
     test('deve permitir que eu crie mais de um TODO', async ({ page }) => {
