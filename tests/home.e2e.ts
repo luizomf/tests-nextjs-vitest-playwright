@@ -192,7 +192,40 @@ test.describe('<Home /> (E2E)', () => {
     test('deve desativar os items da lista enquanto envia a action', async ({
       page,
     }) => {
-      //
+      await insertTestTodos();
+      await page.reload(); // make next.js revalidate cache
+
+      const itemToBeDeleted = page.getByRole('listitem').first();
+      const itemToBeDeletedText = await itemToBeDeleted.textContent();
+
+      if (!itemToBeDeletedText) {
+        throw new Error('Item text is empty');
+      }
+
+      const deleteBtn = itemToBeDeleted.getByRole('button');
+      await deleteBtn.click();
+
+      const allDeleteButtons = await page
+        .getByRole('button', { name: /^apagar:/i })
+        .all();
+
+      for (const btn of allDeleteButtons) {
+        await expect(btn).toBeDisabled();
+      }
+
+      const deleteItemNotVisible = page
+        .getByRole('listitem')
+        .filter({ hasText: itemToBeDeletedText });
+      await deleteItemNotVisible.waitFor({ state: 'detached' });
+      await expect(deleteItemNotVisible).not.toBeVisible();
+
+      const renewedAllButtons = await page
+        .getByRole('button', { name: /^apagar:/i })
+        .all();
+
+      for (const btn of renewedAllButtons) {
+        await expect(btn).toBeEnabled();
+      }
     });
   });
 
@@ -200,19 +233,28 @@ test.describe('<Home /> (E2E)', () => {
     test('deve mostrar erro se a descrção tem 3 ou menos caracteres', async ({
       page,
     }) => {
-      //
+      const { input, btn } = getAll(page);
+
+      await input.fill('abc');
+      await btn.click();
     });
 
     test('deve mostrar erro se um TODO já existir com a mesma descrição', async ({
       page,
     }) => {
-      //
+      const { input, btn } = getAll(page);
+
+      await input.fill('abc');
+      await btn.click();
     });
 
     test('deve remover o erro da tela quando o usuário corrigir o erro', async ({
       page,
     }) => {
-      //
+      const { input, btn } = getAll(page);
+
+      await input.fill('abc');
+      await btn.click();
     });
   });
 });
