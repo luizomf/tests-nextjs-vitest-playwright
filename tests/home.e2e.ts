@@ -237,6 +237,12 @@ test.describe('<Home /> (E2E)', () => {
 
       await input.fill('abc');
       await btn.click();
+
+      const errorText = 'Descrição precisa ter mais de 3 caracteres';
+      const error = page.getByText(errorText);
+
+      await error.waitFor({ state: 'attached', timeout: 5000 });
+      await expect(error).toBeVisible();
     });
 
     test('deve mostrar erro se um TODO já existir com a mesma descrição', async ({
@@ -244,8 +250,16 @@ test.describe('<Home /> (E2E)', () => {
     }) => {
       const { input, btn } = getAll(page);
 
-      await input.fill('abc');
+      await input.fill('eu já existo');
       await btn.click();
+      await input.fill('eu já existo');
+      await btn.click();
+
+      const errorText = 'Já existe um todo com o ID ou descrição enviados';
+      const error = page.getByText(errorText);
+
+      await error.waitFor({ state: 'attached', timeout: 5000 });
+      await expect(error).toBeVisible();
     });
 
     test('deve remover o erro da tela quando o usuário corrigir o erro', async ({
@@ -255,6 +269,18 @@ test.describe('<Home /> (E2E)', () => {
 
       await input.fill('abc');
       await btn.click();
+
+      const errorText = 'Descrição precisa ter mais de 3 caracteres';
+      const error = page.getByText(errorText);
+
+      await error.waitFor({ state: 'attached', timeout: 5000 });
+      await expect(error).toBeVisible();
+
+      await input.fill('Essa descrição é válida');
+      await btn.click();
+
+      await error.waitFor({ state: 'detached', timeout: 5000 });
+      await expect(error).not.toBeVisible();
     });
   });
 });
