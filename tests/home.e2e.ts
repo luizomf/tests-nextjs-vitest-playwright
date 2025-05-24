@@ -1,4 +1,7 @@
-import { makeTestTodoRepository } from '@/core/__tests__/utils/make-test-todo-repository';
+import {
+  insertTestTodos,
+  makeTestTodoRepository,
+} from '@/core/__tests__/utils/make-test-todo-repository';
 import { test, expect, Page } from '@playwright/test';
 
 const HOME_URL = '/';
@@ -134,7 +137,45 @@ test.describe('<Home /> (E2E)', () => {
 
       await expect(input).toBeEnabled();
     });
+
+    test('deve limpar o input após criar um todo', async ({ page }) => {
+      //
+    });
   });
-  // Exclusão
-  // Erros
+
+  test.describe('Exclusão', () => {
+    test('deve permitir apagar um todo', async ({ page }) => {
+      //
+    });
+
+    test('deve permitir apagar todos os TODOs', async ({ page }) => {
+      //
+    });
+
+    test('deve desativar os items da lista enquanto envia a action', async ({
+      page,
+    }) => {
+      //
+    });
+  });
+
+  test.describe('Erros', () => {
+    test('deve mostrar erro se a descrção tem 3 ou menos caracteres', async ({
+      page,
+    }) => {
+      //
+    });
+
+    test('deve mostrar erro se um TODO já existir com a mesma descrição', async ({
+      page,
+    }) => {
+      //
+    });
+
+    test('deve remover o erro da tela quando o usuário corrigir o erro', async ({
+      page,
+    }) => {
+      //
+    });
+  });
 });
